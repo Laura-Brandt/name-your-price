@@ -78,7 +78,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return  bool
          */
-        function is_purchasable(bool $purchasable, WC_Product_Simple $_product)
+        function is_purchasable($purchasable, WC_Product_Simple $_product)
         {
             if ($this->is_open_price_product($_product)) {
                 $purchasable = true;
@@ -132,7 +132,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return  bool
          */
-        function hide_quantity_input_field(bool $return, WC_Product_Simple $_product)
+        function hide_quantity_input_field($return, WC_Product_Simple $_product)
         {
             return ($this->is_open_price_product($_product)) ? true : $return;
         }
@@ -148,7 +148,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return  string
          */
-        function hide_original_price(string $price, WC_Product_Simple $_product)
+        function hide_original_price($price, WC_Product_Simple $_product)
         {
             return ($this->is_open_price_product($_product)) ? '' : $price;
         }
@@ -164,7 +164,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return  string
          */
-        function get_open_price(string $price, WC_Product_Simple $_product)
+        function get_open_price($price, WC_Product_Simple $_product)
         {
             return ($this->is_open_price_product($_product) && isset($_product->open_price)) ? $_product->open_price : $price;
         }
@@ -180,7 +180,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return  bool
          */
-        function validate_open_price_on_add_to_cart(bool $passed, int $product_id)
+        function validate_open_price_on_add_to_cart($passed, $product_id)
         {
             $the_product = wc_get_product($product_id);
             if ($this->is_open_price_product($the_product)) {
@@ -218,7 +218,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return array
          */
-        function get_cart_item_open_price_from_session(array $item, array $values, string $key)
+        function get_cart_item_open_price_from_session(array $item, array $values, $key)
         {
             if (array_key_exists('open_price', $values)) {
                 $item['data']->open_price = $values['open_price'];
@@ -238,7 +238,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return  array
          */
-        function add_open_price_to_cart_item_data(array $cart_item_data, int $product_id, int $variation_id)
+        function add_open_price_to_cart_item_data(array $cart_item_data, $product_id, $variation_id)
         {
             if (isset($_POST['open_price'])) {
                 $cart_item_data['open_price'] = $_POST['open_price'];
@@ -257,7 +257,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
          *
          * @return  array
          */
-        function add_open_price_to_cart_item(array $cart_item_data, string $cart_item_key)
+        function add_open_price_to_cart_item(array $cart_item_data, $cart_item_key)
         {
             if (isset($cart_item_data['open_price'])) {
                 $cart_item_data['data']->open_price = $cart_item_data['open_price'];
