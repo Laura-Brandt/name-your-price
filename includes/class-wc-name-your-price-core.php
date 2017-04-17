@@ -25,7 +25,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
                 add_filter('woocommerce_get_price', [$this, 'get_open_price'], PHP_INT_MAX, 2);
                 add_filter('woocommerce_get_price_html', [$this, 'hide_original_price'], PHP_INT_MAX, 2);
                 add_filter('woocommerce_get_variation_price_html', [$this, 'hide_original_price'], PHP_INT_MAX, 2);
-                add_filter('woocommerce_is_sold_individually', [$this, 'hide_quantity_input_field'], PHP_INT_MAX, 2);
+//                add_filter('woocommerce_is_sold_individually', [$this, 'hide_quantity_input_field'], PHP_INT_MAX, 2);
                 add_filter('woocommerce_is_purchasable', [$this, 'is_purchasable'], PHP_INT_MAX, 2);
                 add_filter('woocommerce_product_supports', [$this, 'disable_add_to_cart_ajax'], PHP_INT_MAX, 3);
                 add_filter('woocommerce_product_add_to_cart_url', [$this, 'add_to_cart_url'], PHP_INT_MAX, 2);
