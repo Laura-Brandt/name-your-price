@@ -318,6 +318,7 @@ if (!class_exists('WC_Product_Name_Your_Price')) :
             $input_field->setAttribute('id', 'open_price');
             $input_field->setAttribute('style', 'width:175px;text-align:center;');
             $input_field->setAttribute('step', $this->getStep());
+            $input_field->setAttribute('value', $this->getDefaultPrice($the_product));
             $input_field->setAttribute('min', $this->getMinPrice($the_product));
             $input_field->setAttribute('max', $this->getMaxPrice($the_product));
             $input_field->setAttribute('onchange', 'document.getElementById("textInput").value=this.value;');
